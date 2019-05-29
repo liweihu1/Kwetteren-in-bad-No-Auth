@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>
+        Admin dashboard
+    </title>
+</h:head>
+<f:view>
+    <h:form>
+        <h1> Admin dashboard - Currently logged in as #{adminDashboard.currentUser.username} </h1>
+        <ui:repeat value="#{adminDashboard.users}" var="user">
+            <h:commandButton id="user"  value="#{user.username}" action="#{adminDashboard.selectUser}">
+                <f:param name="userId" value="#{user.id}"/>
+            </h:commandButton>
+            <f:param name="id" value="#{user.id}" />
+            <ul>
+                <ui:repeat value="#{user.roles}" var="role">
+                    <li>
+                        <h:outputLabel value="#{role}" outcome="role"/>
+                    </li>
+                </ui:repeat>
+            </ul>
+        </ui:repeat>
+    </h:form>
+</f:view>
+</html>

@@ -19,8 +19,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import service.KweetService;
-import service.UserService;
 
 import javax.inject.Inject;
 import java.util.ArrayList;

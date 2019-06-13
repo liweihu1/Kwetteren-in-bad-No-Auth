@@ -51,7 +51,7 @@ public class UserAPI {
     }
 
     @GET
-    @Path("/login/{username}/{password}")
+    @Path("/credentials/{username}/{password}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUserByUsernameAndPassword(@PathParam("username") String username, @PathParam("password") String password) {
         User user = this.userService.getUserByUsernameAndPassword(username, password);

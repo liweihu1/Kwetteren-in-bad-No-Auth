@@ -36,7 +36,8 @@ public class KweetDAOMEMImpl implements IKweetDAO {
 
     @Override
     public Kweet update(Kweet kweet) {
-        return null;
+        Kweet dbKweet = database.getKweetById(kweet.getId());
+        return kweet;
     }
 
     @Override
